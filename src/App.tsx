@@ -19,9 +19,21 @@ class App extends React.Component<{}, State> {
     }
   }
 
+  toggle(id: string) {
+    const todos = this.state.todos.map((todo: Todo) => {
+      if (todo.id === id) {
+        return {...todo, done: !todo.done}
+      } else {
+        return todo
+      }
+    })
+
+    this.setState({todos})
+  }
+
   render() {
     return (
-      <TodoList todos={this.state.todos} />
+      <TodoList todos={this.state.todos} onToggle={this.toggle.bind(this)} />
     );
   }
 }

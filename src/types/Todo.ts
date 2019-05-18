@@ -1,5 +1,5 @@
 export class Todo {
-  id?: string
+  id: string
   title: string = ''
   done: boolean = false
 
