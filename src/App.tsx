@@ -1,6 +1,7 @@
 import React from 'react';
 import { Todo } from './types/Todo';
 import TodoList from './components/TodoList';
+import TodoForm from './components/TodoForm'
 
 interface State {
   todos: Todo[]
@@ -31,9 +32,21 @@ class App extends React.Component<{}, State> {
     this.setState({todos})
   }
 
+  addTodo(title: string) {
+    const todos = [
+      ...this.state.todos,
+      new Todo(title)
+    ]
+
+    this.setState({todos})
+  }
+
   render() {
     return (
-      <TodoList todos={this.state.todos} onToggle={this.toggle.bind(this)} />
+      <>
+        <TodoList todos={this.state.todos} onToggle={this.toggle.bind(this)} />
+        <TodoForm onSubmit={this.addTodo.bind(this)} />
+      </>
     );
   }
 }
