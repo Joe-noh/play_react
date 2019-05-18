@@ -1,3 +1,7 @@
+ReactででTODOリストを実装して、完全に理解した気持ちになるリポジトリ
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
